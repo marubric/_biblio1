@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>AddWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddWork</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddAuthor</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddAuthor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddWork</servlet-name>
+        <url-pattern>/addWork</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.EditWork</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditWork</servlet-name>
+        <url-pattern>/editWork</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.ListWork</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListWork</servlet-name>
+        <url-pattern>/listWork</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAuthor</servlet-name>
+        <url-pattern>/addAuthor</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

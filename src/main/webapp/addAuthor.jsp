@@ -1,0 +1,39 @@
+<%-- 
+    Document   : addAuthor
+    Created on : 17 août 2017, 19:15:57
+    Author     : mrubrice
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Add Author</title>
+    </head>
+    <body>
+        <h1>Add Author</h1>
+        <form action="addAuthor" method="POST">
+        <fieldset>
+                <h2> AUTHOR</h2>
+                <p>
+                    <label for="firstName">First name :</label>
+                    <input name="firstName" id="firstName" type="text" />
+                    
+                    <label for="lastName">Last name :</label>
+                    <input name="lastName" id="lastName" type="text"/></br>
+                    
+                    <label for="design">Designation :</label>
+                    <input name="design" id="design" type="text"/>
+                    
+                    <label for="dateBirth">Date of Birth :</label>
+                    <input name="dateBirth" id="dateBirth" type="date"/></br>
+                    
+                    <label for="dateDeath">Date of Death :</label>
+                    <input name="dateDeath" id="dateDeath" type="date"/>
+                </p>
+            </fieldset>
+        <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
