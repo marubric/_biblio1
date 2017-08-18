@@ -22,7 +22,7 @@ import javax.persistence.ManyToMany;
  * @author mrubrice
  */
 @Entity
-public class Person1 implements Serializable {
+public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -37,14 +37,14 @@ public class Person1 implements Serializable {
     private Date dateDeath;
     
     @ManyToMany(mappedBy="pers")
-    private List<Work1> works;
+    private List<Work> works;
     
     
-    public Person1(){
+    public Person(){
         
     }
     
-    public Person1(String first, String last, String design, Date dtB,Date  dtD){
+    public Person(String first, String last, String design, Date dtB,Date  dtD){
         this.dateBirth=dtB;
         this.dateDeath=dtD;
         this.designation=design;
@@ -102,17 +102,17 @@ public class Person1 implements Serializable {
         this.dateDeath = dateDeath;
     }
 
-    public List<Work1> getWorks() {
+    public List<Work> getWorks() {
         return works;
     }
 
-    public void setWorks(List<Work1> works) {
+    public void setWorks(List<Work> works) {
         this.works = works;
     }
 /*
     @Override
     public String toString() {
-        return "Person1{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", designation=" + designation + ", dateBirth=" + dateBirth + ", dateDeath=" + dateDeath + ", works=" + works + '}';
+        return "Person{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", designation=" + designation + ", dateBirth=" + dateBirth + ", dateDeath=" + dateDeath + ", works=" + works + '}';
     }
     */
 }

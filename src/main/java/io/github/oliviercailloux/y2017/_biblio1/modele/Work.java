@@ -21,7 +21,7 @@ import javax.persistence.Temporal;
  * @author mrubrice
  */
 @Entity
-public class Work1 implements Serializable {
+public class Work implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
@@ -38,9 +38,9 @@ public class Work1 implements Serializable {
     private String intendedAudience;
 
     @ManyToMany
-    private List<Person1> pers;
-    @OneToMany(mappedBy="work",cascade = CascadeType.ALL)
-    private List<Expression1> exprs;
+    private List<Person> pers;
+    @OneToMany(mappedBy="work")
+    private List<Expression> exprs;
     /*@ManyToOne
     private CorporateBody cbs;
     @ManyToMany(mappedBy="works")
@@ -52,11 +52,11 @@ public class Work1 implements Serializable {
     @ManyToMany(mappedBy="works")
     private List<Concept>cpts;
     */
-    public Work1() {
+    public Work() {
         
     }
     
-    public Work1(String title,String form,Date dt,String ctxt,String distCh,String intA){
+    public Work(String title,String form,Date dt,String ctxt,String distCh,String intA){
         this.title=title;
         this.intendedAudience=intA;
         this.date=dt;
@@ -130,11 +130,11 @@ public class Work1 implements Serializable {
         this.intendedAudience = intendedAudience;
     }
     
-    public List<Person1> getPers() {
+    public List<Person> getPers() {
         return pers;
     }
 
-    public void setPers(List<Person1> pers) {
+    public void setPers(List<Person> pers) {
         this.pers = pers;
     }
 

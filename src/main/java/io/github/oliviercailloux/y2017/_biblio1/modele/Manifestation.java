@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
  * @author mrubrice
  */
 @Entity
-public class Manifestation1 implements Serializable {
+public class Manifestation implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -43,17 +43,17 @@ public class Manifestation1 implements Serializable {
     private String typeFace;
 
     @ManyToOne
-    private Item1 itm;
+    private Item itm;
     @ManyToMany(mappedBy="manifs",cascade = CascadeType.PERSIST)
-    private List<Expression1>exprs;
+    private List<Expression>exprs;
     /*@ManyToMany
     private List<Person1>pers;*/
 
-    public Manifestation1(){
+    public Manifestation(){
         
     }
     
-    //public Manifestation1(String ttl,String edit,String state,String publication,String publisher,Date dt, String){
+    //public Manifestation(String ttl,String edit,String state,String publication,String publisher,Date dt, String){
         
     //}
     
@@ -137,19 +137,19 @@ public class Manifestation1 implements Serializable {
         this.typeFace = typeFace;
     }
 
-    public List<Expression1> getExprs() {
+    public List<Expression> getExprs() {
         return exprs;
     }
 
-    public void setExprs(List<Expression1> exprs) {
+    public void setExprs(List<Expression> exprs) {
         this.exprs = exprs;
     }
 
-    public Item1 getItm() {
+    public Item getItm() {
         return itm;
     }
 
-    public void setItm(Item1 itm) {
+    public void setItm(Item itm) {
         this.itm = itm;
     }
     
@@ -174,10 +174,10 @@ public class Manifestation1 implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Manifestation1)) {
+        if (!(object instanceof Manifestation)) {
             return false;
         }
-        Manifestation1 other = (Manifestation1) object;
+        Manifestation other = (Manifestation) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

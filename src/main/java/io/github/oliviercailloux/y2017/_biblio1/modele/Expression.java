@@ -24,7 +24,7 @@ import javax.persistence.Temporal;
  * @author mrubrice
  */
 @Entity
-public class Expression1 implements Serializable {
+public class Expression implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -42,17 +42,17 @@ public class Expression1 implements Serializable {
     private String criticalResponse;
     
     @ManyToOne
-    private Work1 work;
+    private Work work;
     @ManyToMany
-    private List<Manifestation1>manifs;
+    private List<Manifestation>manifs;
     /*@OneToMany
     private List<Person1> pers;*/
     
-    public Expression1(){
+    public Expression(){
         
     }
     
-    public Expression1(String ttl,String frm,Date dt,String lang,String dist,String ctxt,String critic){
+    public Expression(String ttl,String frm,Date dt,String lang,String dist,String ctxt,String critic){
         this.context=ctxt;
         this.criticalResponse=critic;
         this.date=dt;
@@ -62,7 +62,7 @@ public class Expression1 implements Serializable {
         this.title=ttl;
         //this.pers=new ArrayList<>();
         this.manifs=new ArrayList<>();
-        this.work=new Work1();
+        this.work=new Work();
     }
     public Long getId() {
         return id;
@@ -128,19 +128,19 @@ public class Expression1 implements Serializable {
         this.criticalResponse = criticalResponse;
     }
 
-    public Work1 getWork() {
+    public Work getWork() {
         return work;
     }
 
-    public void setWork(Work1 work) {
+    public void setWork(Work work) {
         this.work = work;
     }
 
-    public List<Manifestation1> getManifs() {
+    public List<Manifestation> getManifs() {
         return manifs;
     }
 
-    public void setManifs(List<Manifestation1> manifs) {
+    public void setManifs(List<Manifestation> manifs) {
         this.manifs = manifs;
     }
 /*

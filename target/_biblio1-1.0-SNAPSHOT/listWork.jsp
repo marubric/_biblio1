@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="io.github.oliviercailloux.y2017._biblio1.modele.Person1"%>
+<%@page import="io.github.oliviercailloux.y2017._biblio1.modele.Person"%>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>

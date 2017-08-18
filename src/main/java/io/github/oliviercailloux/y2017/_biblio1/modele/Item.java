@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
  * @author mrubrice
  */
 @Entity
-public class Item1 implements Serializable {
+public class Item implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -37,14 +37,14 @@ public class Item1 implements Serializable {
     private Date exhibitionDate;
     
     @OneToMany(mappedBy="itm")
-    private List<Manifestation1>manifs;
+    private List<Manifestation>manifs;
     
     
-    public Item1(){
+    public Item(){
         
     }
     
-    public Item1(String ident,String prov,Date dt){
+    public Item(String ident,String prov,Date dt){
         this.exhibitionDate=dt;
         this.identifier=ident;
         this.provenance=prov;
@@ -84,19 +84,19 @@ public class Item1 implements Serializable {
         this.exhibitionDate = exhibitionDate;
     }
 
-    public List<Manifestation1> getManifs() {
+    public List<Manifestation> getManifs() {
         return manifs;
     }
 
-    public void setManifs(List<Manifestation1> manifs) {
+    public void setManifs(List<Manifestation> manifs) {
         this.manifs = manifs;
     }
 
-    /*public List<Person1> getPers() {
+    /*public List<Person> getPers() {
         return pers;
     }
 
-    public void setPers(List<Person1> pers) {
+    public void setPers(List<Person> pers) {
         this.pers = pers;
     }*/
     

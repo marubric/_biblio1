@@ -5,7 +5,7 @@
  */
 package io.github.oliviercailloux.y2017._biblio1.service;
 
-import io.github.oliviercailloux.y2017._biblio1.modele.Work1;
+import io.github.oliviercailloux.y2017._biblio1.modele.Person;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author mrubrice
  */
 @Stateless
-public class Work1Facade extends AbstractFacade<Work1> {
+public class PersonFacade extends AbstractFacade<Person> {
 
     @PersistenceContext(unitName = "_biblio1PU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class Work1Facade extends AbstractFacade<Work1> {
         return em;
     }
 
-    public Work1Facade() {
-        super(Work1.class);
+    public PersonFacade() {
+        super(Person.class);
     }
     
 }
