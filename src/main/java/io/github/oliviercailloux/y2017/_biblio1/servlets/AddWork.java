@@ -56,7 +56,7 @@ public class AddWork extends HttpServlet {
         
         // Get all information of work
         title = request.getParameter("title");
-        indentA = request.getParameter("indendA");
+        indentA = request.getParameter("intendA");
         context = request.getParameter("context");
         form = request.getParameter("form");
         distCha = request.getParameter("distCha");
@@ -70,11 +70,11 @@ public class AddWork extends HttpServlet {
         
         // Instanciation of objects to insert into database
         Work wk = new Work(title,form,dtW,context,distCha,indentA);
-        person = (Person) persF.find(idAuthor);
+        person = persF.find(idAuthor);
         wk.getPers().add(person);
         workF.create(wk);
        
-       getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+       getServletContext().getRequestDispatcher("/index.html").forward(request, response);
         
     }
 }

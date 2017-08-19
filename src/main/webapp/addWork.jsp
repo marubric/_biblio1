@@ -29,7 +29,7 @@
                     <input name="distCha" id="distCha" type="text"/>
                     
                     <label for="intendA">Intended Audience :</label>
-                    <input name="intendA" id="intendA" type="text"/>
+                    <input name="intendA" id="intendA" type="text"/></br>
                     
                     Auteur :
                     <select name="id_author">

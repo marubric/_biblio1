@@ -51,7 +51,7 @@ public class AddAuthor extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/addAuthor.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/addAuthor.html").forward(request, response);
     }
 
     // Redirection to the start page
@@ -59,7 +59,7 @@ public class AddAuthor extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/index.html").forward(request, response);
     }
 
 }

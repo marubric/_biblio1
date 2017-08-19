@@ -9,6 +9,14 @@
         <servlet-name>AddAuthor</servlet-name>
         <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddAuthor</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.DeleteWork</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchWork</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddWork</servlet-name>
         <url-pattern>/addWork</url-pattern>
@@ -33,7 +41,15 @@
         <servlet-name>AddAuthor</servlet-name>
         <url-pattern>/addAuthor</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteWork</servlet-name>
+        <url-pattern>/deleteWork</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchWork</servlet-name>
+        <url-pattern>/searchWork</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>/index.jsp</welcome-file>
+        <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
 </web-app>

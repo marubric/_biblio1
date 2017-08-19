@@ -10,7 +10,6 @@ import io.github.oliviercailloux.y2017._biblio1.service.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
@@ -55,7 +54,7 @@ public class EditWork extends HttpServlet {
         
         // Get all information of work
         title = request.getParameter("title");
-        indentA = request.getParameter("indendA");
+        indentA = request.getParameter("intendA");
         context = request.getParameter("context");
         form = request.getParameter("form");
         distCha = request.getParameter("distCha");
@@ -75,10 +74,11 @@ public class EditWork extends HttpServlet {
         wk.setIntendedAudience(indentA);
         wk.setContext(context);
         wk.setDistinctCharacteristic(distCha);
+        wk.setForm(form);
         wk.setDate(dtW);
         workF.edit(wk);
        
-       getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+       getServletContext().getRequestDispatcher("/index.html").forward(request, response);
         
     }
 }
