@@ -2,44 +2,60 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
+        <servlet-name>AddAuthor</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddAuthor</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>AddWork</servlet-name>
         <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddWork</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddAuthor</servlet-name>
-        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddAuthor</servlet-class>
+        <servlet-name>ListWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.ListWork</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchExpression</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditWork</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.EditWork</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteWork</servlet-name>
         <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.DeleteWork</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SearchWork</servlet-name>
-        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchWork</servlet-class>
+        <servlet-name>AddExpression</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.AddExpression</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListExpression</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.ListExpression</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchExpression</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchExpression</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditExpression</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.EditExpression</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteExpression</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.DeleteExpression</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddWork</servlet-name>
         <url-pattern>/addWork</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>EditWork</servlet-name>
-        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.EditWork</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>EditWork</servlet-name>
         <url-pattern>/editWork</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>ListWork</servlet-name>
-        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.ListWork</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>ListWork</servlet-name>
         <url-pattern>/listWork</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddAuthor</servlet-name>
-        <url-pattern>/addAuthor</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteWork</servlet-name>
@@ -48,6 +64,30 @@
     <servlet-mapping>
         <servlet-name>SearchWork</servlet-name>
         <url-pattern>/searchWork</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAuthor</servlet-name>
+        <url-pattern>/addAuthor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddExpression</servlet-name>
+        <url-pattern>/addExpression</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditExpression</servlet-name>
+        <url-pattern>/editExpression</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListExpression</servlet-name>
+        <url-pattern>/listExpression</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteExpression</servlet-name>
+        <url-pattern>/deleteExpression</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchExpression</servlet-name>
+        <url-pattern>/searchExpression</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>/index.html</welcome-file>

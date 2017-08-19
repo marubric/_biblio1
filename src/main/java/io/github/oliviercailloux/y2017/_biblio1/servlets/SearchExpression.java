@@ -3,6 +3,7 @@ package io.github.oliviercailloux.y2017._biblio1.servlets;
 import io.github.oliviercailloux.y2017._biblio1.modele.*;
 import io.github.oliviercailloux.y2017._biblio1.service.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.persistence.EntityManager;
@@ -19,12 +20,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author mrubrice
  */
-public class SearchWork extends HttpServlet {
+public class SearchExpression extends HttpServlet {
 
     @EJB
     WorkFacade workF = new WorkFacade();
     @EJB
-    PersonFacade perF = new PersonFacade();
+    ExpressionFacade exprF = new ExpressionFacade();
     
     @PersistenceContext
     private EntityManager em;
@@ -32,7 +33,7 @@ public class SearchWork extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Creation of variables
+        // Creation fo variables
         Query query= null;
         String sql;
         String choice = request.getParameter("filter");
@@ -41,53 +42,58 @@ public class SearchWork extends HttpServlet {
         EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("_biblio1PU");
 	EntityManager em = emfactory.createEntityManager( );
         
-        // Do the requête function of the filter value
+        // requete depend on the value of filter
         switch(choice){
             case "date":
-                sql = "SELECT W FROM Work W WHERE W.date LIKE :title";
+                sql = "SELECT E FROM Expression E WHERE E.date LIKE :title";
                 query = em.createQuery(sql).
                 setParameter("title", rep);
                 break;
-            case "author":
-                sql = "SELECT W FROM Work W INNER JOIN W.pers P WHERE UPPER(P.firstName) LIKE UPPER(:author) OR UPPER(P.lastName) LIKE UPPER(:author)";
+            case "work":
+                sql = "SELECT E FROM Expression E INNER JOIN Work W WHERE UPPER(W.title) LIKE UPPER(:work)";
                 query = em.createQuery(sql).
-                setParameter("author", rep);
+                setParameter("work", rep);
                 break;
             case "form":
-                sql = "SELECT W FROM Work W WHERE W.form LIKE :title";
+                sql = "SELECT WE FROM Expression E WHERE E.form LIKE :title";
                 query = em.createQuery(sql).
                 setParameter("title", rep);
                 break;
             case "context":
-                sql = "SELECT W FROM Work W WHERE W.context LIKE :title";
+                sql = "SELECT E FROM Expression E WHERE E.context LIKE :title";
                 query = em.createQuery(sql).
                 setParameter("title", rep);
                 break;
-            case "intendAud":
-                sql = "SELECT W FROM Work W WHERE W.intendedAudience LIKE :title";
+            case "lang":
+                sql = "SELECT E FROM Expression E WHERE E.language LIKE :title";
+                query = em.createQuery(sql).
+                setParameter("title", rep);
+                break;
+            case "criticalrep":
+                sql = "SELECT E FROM Expression E WHERE E.criticalReponse LIKE :title";
                 query = em.createQuery(sql).
                 setParameter("title", rep);
                 break;
             case "distCha":
-                sql = "SELECT W FROM Work W WHERE W.distinctCharacteristic LIKE :title";
+                sql = "SELECT E FROM Expression E WHERE E.distinctCharacteristic LIKE :title";
                 query = em.createQuery(sql).
                 setParameter("title", rep);
                 break;
             default:
-                sql = "SELECT W FROM Work W WHERE W.title LIKE :title";
+                sql = "SELECT E FROM Expression E WHERE E.title LIKE :title";
                 query = em.createQuery(sql).
                 setParameter("title", rep);
                 break;
         }
         
-        // Get all works from the database associate with the filter value
+        // Get all expression associate of the value of the filter
         // send it to the view
-	List<Work> works = query.getResultList();
-	request.setAttribute("works", works);
+	List<Expression> exprs = query.getResultList();
+	request.setAttribute("exprs", exprs);
 	em.close( );
 	emfactory.close( );
    
-        getServletContext().getRequestDispatcher("/listWork.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/listExpression.jsp").forward(request, response);
     }
 
   
@@ -95,6 +101,6 @@ public class SearchWork extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        getServletContext().getRequestDispatcher("/listWork.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/listExpression.jsp").forward(request, response);
     }
 }

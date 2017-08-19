@@ -44,7 +44,7 @@ public class Manifestation implements Serializable {
 
     @ManyToOne
     private Item itm;
-    @ManyToMany(mappedBy="manifs",cascade = CascadeType.PERSIST)
+    @ManyToMany(mappedBy="manifs")
     private List<Expression>exprs;
     /*@ManyToMany
     private List<Person1>pers;*/

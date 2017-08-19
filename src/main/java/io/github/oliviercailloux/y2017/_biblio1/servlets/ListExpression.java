@@ -5,7 +5,7 @@
  */
 package io.github.oliviercailloux.y2017._biblio1.servlets;
 
-import io.github.oliviercailloux.y2017._biblio1.modele.*;
+import io.github.oliviercailloux.y2017._biblio1.modele.Expression;
 import io.github.oliviercailloux.y2017._biblio1.service.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,13 +19,8 @@ import javax.ejb.EJB;
  *
  * @author mrubrice
  */
-public class ListWork extends HttpServlet {
-
-    @EJB
-    WorkFacade workF = new WorkFacade();
-    
-    @EJB
-    PersonFacade persF = new PersonFacade();
+public class ListExpression extends HttpServlet {
+ 
     @EJB
     ExpressionFacade expF = new ExpressionFacade();
     
@@ -34,12 +29,12 @@ public class ListWork extends HttpServlet {
             throws ServletException, IOException { 
         
         // Get all works from the database
-        List<Work> works = workF.findAll();
+        List<Expression> exprs = expF.findAll();
         
         // initialize attribute to send to the view
-        request.setAttribute("works", works);
+        request.setAttribute("exprs", exprs);
         
-        getServletContext().getRequestDispatcher("/listWork.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/listExpression.jsp").forward(request, response);
     }
 
 }

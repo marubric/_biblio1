@@ -5,14 +5,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
@@ -64,7 +62,8 @@ public class Work implements Serializable {
         this.context=ctxt;
         this.distinctCharacteristic=distCh;
         pers=new ArrayList<>();
-        /*exprs=new ArrayList<>();
+        exprs=new ArrayList<>();
+        /*
         cbs=new CorporateBody();
         plcs=new ArrayList<>();
         Evts=new ArrayList<>();
@@ -138,7 +137,7 @@ public class Work implements Serializable {
         this.pers = pers;
     }
 
-    /*public List<Expression> getExprs() {
+    public List<Expression> getExprs() {
         return exprs;
     }
 
@@ -146,51 +145,4 @@ public class Work implements Serializable {
         this.exprs = exprs;
     }
 
-    public CorporateBody getCbs() {
-        return cbs;
-    }
-
-    public void setCbs(CorporateBody cbs) {
-        this.cbs = cbs;
-    }
-    
-
-    public List<Place> getPlcs() {
-        return plcs;
-    }
-
-    public void setPlcs(List<Place> plcs) {
-        this.plcs = plcs;
-    }
-
-    public List<Event> getEvts() {
-        return Evts;
-    }
-
-    public void setEvts(List<Event> Evts) {
-        this.Evts = Evts;
-    }
-
-    public List<Object> getObjs() {
-        return objs;
-    }
-
-    public void setObjs(List<Object> objs) {
-        this.objs = objs;
-    }
-
-    public List<Concept> getCpts() {
-        return cpts;
-    }
-
-    public void setCpts(List<Concept> cpts) {
-        this.cpts = cpts;
-    }  
-    
-
-    @Override
-    public String toString() {
-        return "Work{" + "id=" + id + ", title=" + title + ", form=" + form + ", date=" + date + ", context=" + context + ", distinctCharacteristic=" + distinctCharacteristic + ", intendedAudience=" + intendedAudience + ", pers=" + pers + '}';
-    } 
-    */
 }

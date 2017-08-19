@@ -54,12 +54,68 @@
                                     <li>${p.firstName} ${p.lastName}</li>
                                 </c:forEach>
                             </ul>
-                        </td>&nbsp;
+                        </td>
                         <td>
                             <a href="editWork?id_work=${work.id}">edit</a>&nbsp;
                             <a href="deleteWork?id_work=${work.id}">delete</a>
                         </td>
-                    <tr>
+                    </tr>
+                    <c:if test="${not empty work.exprs}">
+                        <tr>
+                            <td colspan="3">
+                               &nbsp; 
+                            </td>
+                            <td colspan="6">
+                                Expressions :<br />
+                                <table>
+                                    <tr>
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            TITLE
+                                        </th>
+                                        <th>
+                                            FORM
+                                        </th>
+                                        <th>
+                                            DATE
+                                        </th>
+                                        <th>
+                                            LANGUAGE
+                                        </th>
+                                        <th>
+                                            CONTEXT
+                                        </th>
+                                        <th>
+                                            DISTINCT CHARACTERISTIC
+                                        </th>
+                                        <th>
+                                            CRITICAL RESPONSE
+                                        </th>
+                                        <th>
+                                        </th>
+                                    </tr>
+                                    <c:forEach items="${work.exprs}" var="exp">
+                                        <tr>
+                                            <td>${exp.id}</td>
+                                            <td>${exp.title}</td>
+                                            <td>${exp.form}</td>
+                                            <td>${exp.date}</td>
+                                            <td>${exp.language}</td>
+                                            <td>${exp.context}</td>
+                                            <td>${exp.distinctCharacteristic}</td>
+                                            <td>${exp.criticalResponse}</td>
+                                            <td>
+                                                <a href="editExpression?id_expr=${exp.id}">edit</a>&nbsp;
+                                                <a href="deleteExpression?id_expr=${exp.id}">delete</a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </table>
+                            </td>
+                        </tr>
+                    </c:if>
                 </c:forEach>
             </table>    
     </body>

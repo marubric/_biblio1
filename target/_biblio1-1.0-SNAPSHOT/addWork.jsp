@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Work</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
@@ -34,7 +34,7 @@
                     Auteur :
                     <select name="id_author">
                         <c:forEach items="${authors}" var="author">
-                            <option value="${author.id}">${author.firstName} ${author.lastName}</option>
+                            <option value="${author.id}">${author.id} | ${author.firstName} ${author.lastName}</option>
                         </c:forEach>
                     </select>
                 </p>              
