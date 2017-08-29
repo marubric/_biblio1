@@ -3,16 +3,16 @@
     Created on : 18 août 2017, 18:58:15
     Author     : mrubrice
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Search Work</title>
+        <title>Search Expression</title>
     </head>
     <body>
-        <h1>Search Work</h1>
+        <h1>Search an Expression</h1>
         <form action="searchExpression" method="POST">
             <fieldset>
                 <table>
@@ -28,7 +28,7 @@
                         <td>
                             <input type="radio" name="filter" value="title"/>Title&nbsp;&nbsp;
                             <input type="radio" name="filter" value="date"/>Date&nbsp;&nbsp;
-                            <input type="radio" name="filter" value="work"/>Work&nbsp;&nbsp;
+                            <input type="radio" name="filter" value="work"/>Expression&nbsp;&nbsp;
                             <input type="radio" name="filter" value="form"/>Form&nbsp;&nbsp;</br>
                             <input type="radio" name="filter" value="context"/>Context&nbsp;&nbsp;
                             <input type="radio" name="filter" value="lang"/>Language&nbsp;&nbsp;

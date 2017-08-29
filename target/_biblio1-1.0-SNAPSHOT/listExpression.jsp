@@ -59,6 +59,70 @@
                             <a href="deleteExpression?id_expr=${expr.id}">delete</a>
                         </td>
                     </tr>
+                    <c:if test="${not empty expr.manifs}">
+                        <tr>
+                            <td colspan="3">
+                               &nbsp; 
+                            </td>
+                            <td colspan="6">
+                                Manifestations :<br />
+                                <table>
+                                    <tr>
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            TITLE
+                                        </th>
+                                        <th>
+                                            EDITION
+                                        </th>
+                                        <th>
+                                            STATEMENT RESPONSIBILITY
+                                        </th>
+                                        <th>
+                                            PUBLICATION PLACE
+                                        </th>
+                                        <th>
+                                            PUBLISHER
+                                        </th>
+                                        <th>
+                                            DATE
+                                        </th>
+                                        <th>
+                                            MANIFESTATION ID
+                                        </th>
+                                        <th>
+                                            SOURCE ACQUISITION
+                                        </th>
+                                        <th>
+                                            TYPE FACE
+                                        </th>
+                                        <th>
+                                        </th>
+                                    </tr>
+                                    <c:forEach items="${expr.manifs}" var="man">
+                                        <tr>
+                                            <td>${man.id}</td>
+                                            <td>${man.title}</td>
+                                            <td>${man.edition}</td>
+                                            <td>${man.date}</td>
+                                            <td>${man.publisher}</td>
+                                            <td>${man.publicationPlace}</td>
+                                            <td>${man.statementResponsibility}</td>
+                                            <td>${man.manifestationID}</td>
+                                            <td>${man.sourceAcquisition}</td>
+                                            <td>${man.typeFace}</td>
+                                            <td>
+                                                <a href="editManifestation?id_manif=${man.id}">edit</a>&nbsp;
+                                                <a href="deleteManifestation?id_manif=${man.id}">delete</a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </table>
+                            </td>
+                        </tr>
+                    </c:if>
                 </c:forEach>
             </table>    
     </body>

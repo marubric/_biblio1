@@ -1,0 +1,35 @@
+<!-- 
+    Document   : addItem
+    Created on : 20 ao�t 2017, 16:10:12
+    Author     : mrubrice
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Add an item</title>
+    </head>
+    <body>
+        <h1>Add an Item to a Manifestation</h1>
+        <form action="addItem" method="POST">
+            <fieldset>
+                <p>                    
+                    <label for="dateI">Exibition Date :</label>
+                    <input name="dateI" id="dateI" type="date"/>&nbsp;&nbsp;
+                    
+                    <label for="ident">Identifier :</label>
+                    <input name="ident" id="ident" type="text"/>&nbsp;&nbsp;
+                    
+                    <label for="prov">Provenance:</label>
+                    <input name="prov" id="prov" type="text" /></br></br>
+                    
+                </p>              
+            </fieldset>
+            <p>
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </p>
+        </form>
+    </body>
+</html>

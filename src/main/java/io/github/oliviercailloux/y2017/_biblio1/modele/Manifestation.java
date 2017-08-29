@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package io.github.oliviercailloux.y2017._biblio1.modele;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
@@ -38,14 +31,14 @@ public class Manifestation implements Serializable {
     private String publisher;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date date;
-    private String ManifestationID;
+    private String manifestationID;
     private String sourceAcquisition;
     private String typeFace;
 
     @ManyToOne
     private Item itm;
-    @ManyToMany(mappedBy="manifs")
-    private List<Expression>exprs;
+    @ManyToOne
+    private Expression expr;
     /*@ManyToMany
     private List<Person1>pers;*/
 
@@ -53,9 +46,18 @@ public class Manifestation implements Serializable {
         
     }
     
-    //public Manifestation(String ttl,String edit,String state,String publication,String publisher,Date dt, String){
-        
-    //}
+    public Manifestation(String ttl,String edit,String state,String publication,String publisher,Date dt,String manID,String srcA,String typeF){
+        this.manifestationID = manID;
+        this.date = dt;
+        this.edition = edit;
+        this.itm = new Item();
+        this.publicationPlace = publication;
+        this.publisher = publisher ;
+        this.sourceAcquisition = srcA;
+        this.statementResponsibility = state;
+        this.title = ttl;
+        this.typeFace = typeF;
+    }
     
     public Long getId() {
         return id;
@@ -114,11 +116,11 @@ public class Manifestation implements Serializable {
     }
 
     public String getManifestationID() {
-        return ManifestationID;
+        return manifestationID;
     }
 
     public void setManifestationID(String ManifestationID) {
-        this.ManifestationID = ManifestationID;
+        this.manifestationID = ManifestationID;
     }
 
     public String getSourceAcquisition() {
@@ -137,12 +139,12 @@ public class Manifestation implements Serializable {
         this.typeFace = typeFace;
     }
 
-    public List<Expression> getExprs() {
-        return exprs;
+    public Expression getExpr() {
+        return expr;
     }
 
-    public void setExprs(List<Expression> exprs) {
-        this.exprs = exprs;
+    public void setExpr(Expression expr) {
+        this.expr = expr;
     }
 
     public Item getItm() {
@@ -152,8 +154,6 @@ public class Manifestation implements Serializable {
     public void setItm(Item itm) {
         this.itm = itm;
     }
-    
-    
 
     /*public List<Person1> getPers() {
         return pers;
@@ -163,13 +163,6 @@ public class Manifestation implements Serializable {
         this.pers = pers;
     }
     */
-    
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
 
     @Override
     public boolean equals(Object object) {
@@ -182,11 +175,6 @@ public class Manifestation implements Serializable {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "io.github.oliviercailloux.y2017._biblio1.modele.Manifestation1[ id=" + id + " ]";
     }
     
 }

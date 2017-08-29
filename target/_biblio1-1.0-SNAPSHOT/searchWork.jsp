@@ -3,7 +3,7 @@
     Created on : 18 août 2017, 18:58:15
     Author     : mrubrice
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -19,6 +19,9 @@ public class DeleteExpression extends HttpServlet {
      @EJB
      ExpressionFacade exprF = new ExpressionFacade(); 
     
+     @EJB
+     ManifestationFacade maniF = new ManifestationFacade(); 
+     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

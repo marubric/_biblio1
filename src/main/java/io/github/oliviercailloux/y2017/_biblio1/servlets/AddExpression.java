@@ -36,7 +36,7 @@ public class AddExpression extends HttpServlet {
         List <Work> works = workF.findAll();
         request.setAttribute("works", works);
         
-        // Get list of works from the database
+        // Get list of person from the database
         // To send to the view
         //List <Person> pers = persF.findAll();
         //request.setAttribute("pers", pers);
