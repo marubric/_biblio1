@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
@@ -22,7 +23,7 @@ public class EditItem extends HttpServlet {
 
    
     @EJB
-    ExpressionFacade exprF = new ExpressionFacade();
+    ManifestationFacade manF = new ManifestationFacade();
     
     @EJB
     ItemFacade itmF = new ItemFacade();
@@ -38,6 +39,10 @@ public class EditItem extends HttpServlet {
         // send it to the edit page of work
         Item item = itmF.find(idItem);
         request.setAttribute("item", item);
+        
+        List<Manifestation>manifs = manF.findAll();
+        request.setAttribute("manifs",manifs);
+        
         getServletContext().getRequestDispatcher("/editItem.jsp").forward(request, response);
     }
 
@@ -66,11 +71,15 @@ public class EditItem extends HttpServlet {
         
         // Instanciation objects Item to insert into database
         itm = itmF.find(idItem);
+        Manifestation man = manF.find(Long.parseLong(request.getParameter("id_manif")));
         
         // Edit variables of the object Item
         itm.setExhibitionDate(dtI);
         itm.setIdentifier(identifier);
         itm.setProvenance(provenance);
+        itm.getManifs().clear();
+        itm.getManifs().add(man);
+        
         
         itmF.edit(itm);
        

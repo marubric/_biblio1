@@ -27,6 +27,9 @@ public class EditManifestation extends HttpServlet {
     @EJB
     ManifestationFacade manF = new ManifestationFacade();
     
+    @EJB
+    ItemFacade itmF = new ItemFacade();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,6 +44,9 @@ public class EditManifestation extends HttpServlet {
         
         List <Expression> exprs =expF.findAll();
         request.setAttribute("exprs", exprs);
+        
+        List<Item> items = itmF.findAll();
+        request.setAttribute("items",items);
         getServletContext().getRequestDispatcher("/editManifestation.jsp").forward(request, response);
     }
 
@@ -75,6 +81,7 @@ public class EditManifestation extends HttpServlet {
         // Instanciation objects Item to insert into database
         man = manF.find(idManif);
         Expression expr = expF.find(Long.parseLong(request.getParameter("id_Expr")));
+        Item itm = itmF.find(Long.parseLong(request.getParameter("id_Item")));
         
         // Edit variables of the object Item
         man.setDate(dtM);
@@ -84,6 +91,7 @@ public class EditManifestation extends HttpServlet {
         man.setPublisher(publisher);
         man.setSourceAcquisition(src);
         man.setStatementResponsibility(state);
+        man.setItm(itm);
         man.setExpr(expr);
         man.setTitle(titleM);
         man.setTypeFace(typeF);

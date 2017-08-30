@@ -31,7 +31,7 @@ public class Person implements Serializable {
     private Date dateBirth;
     private Date dateDeath;
     
-    @ManyToMany(mappedBy="pers")
+    @ManyToMany(mappedBy="pers",cascade=CascadeType.ALL)
     private List<Work> works;
     
     

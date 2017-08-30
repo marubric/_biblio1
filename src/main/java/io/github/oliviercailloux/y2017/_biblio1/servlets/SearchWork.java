@@ -20,11 +20,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author mrubrice
  */
 public class SearchWork extends HttpServlet {
-
-    @EJB
-    WorkFacade workF = new WorkFacade();
-    @EJB
-    PersonFacade perF = new PersonFacade();
     
     @PersistenceContext
     private EntityManager em;

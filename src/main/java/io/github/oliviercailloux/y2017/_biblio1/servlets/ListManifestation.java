@@ -23,7 +23,7 @@ public class ListManifestation extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException { 
         
-        // Get all works from the database
+        // Get all objects from the database
         List<Manifestation> manifs = manF.findAll();
         
         // initialize attribute to send to the view

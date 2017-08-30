@@ -5,7 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="io.github.oliviercailloux.y2017._biblio1.modele.Expression" %>
+<%@page import="io.github.oliviercailloux.y2017._biblio1.modele.*" %>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>

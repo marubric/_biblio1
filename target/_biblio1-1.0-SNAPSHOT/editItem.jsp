@@ -4,7 +4,7 @@
     Author     : mrubrice
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="io.github.oliviercailloux.y2017._biblio1.modele.Item" %>
+<%@page import="io.github.oliviercailloux.y2017._biblio1.modele.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,12 +29,12 @@
                     
                     <input name="id_item" type="hidden" value="${param.id_item}"/></br></br>
                     
-                    Expression :
-                    <ul>
-                    <c:forEach items="${item.manifs}" var="man">
-                        <li>${man.id} | ${man.title}</li>
-                    </c:forEach>
-                    </ul>
+                    Manifestations :
+                    <select name="id_manif">
+                        <c:forEach items="${manifs}" var="man">
+                            <option value="${man.id}">${man.id} | ${man.title}</option>
+                        </c:forEach>
+                    </select>
                 </p>
             </fieldset>
             <p>

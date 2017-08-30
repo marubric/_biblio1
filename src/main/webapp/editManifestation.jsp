@@ -15,7 +15,7 @@
     </head>
     <body>
         <h1>Add an Manifestation to an Expression </h1>
-        <form action="addManifestation" method="POST">
+        <form action="editManifestation" method="POST">
             <fieldset>
                 <h2> Manifestation </h2>
                 <p>
@@ -45,11 +45,19 @@
                     
                     <label for="typeF">Type face :</label>
                     <input name="typeF" id="typeF" type="text" value="${manif.typeFace}"/></br></br>
+                    
+                    <input name="id_manif" type="hidden" value="${param.id_manif}"/></br></br>
                 </p>              
                 Expression:
                 <select name="id_Expr">
                     <c:forEach items="${exprs}" var="expr">
                         <option value="${expr.id}">${expr.id} | ${expr.title}</option>
+                    </c:forEach>
+                </select>
+                Item:
+                <select name="id_Item">
+                    <c:forEach items="${items}" var="itm">
+                        <option value="${itm.id}">${itm.id} | ${itm.provenance}</option>
                     </c:forEach>
                 </select>
                 </p>              

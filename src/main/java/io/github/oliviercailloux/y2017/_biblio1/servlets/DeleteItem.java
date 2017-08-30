@@ -30,8 +30,6 @@ public class DeleteItem extends HttpServlet {
         // Find the item into database
         // and remove it
         Item item = itmF.find(idItem);
-        item.getManifs().iterator().remove();
-        
         itmF.remove(item);
         
         // Get all manifestation from database

@@ -38,8 +38,9 @@
                     <th>
                         ACTIONS
                     </th>
-                </tr>
+                </tr> 
                 <c:forEach items="${works}" var="work">
+                    
                     <tr>
                         <td>${work.id}</td>
                         <td>${work.title}</td>
@@ -62,11 +63,11 @@
                     </tr>
                     <c:if test="${not empty work.exprs}">
                         <tr>
-                            <td colspan="3">
+                            <td colspan="1">
                                &nbsp; 
                             </td>
-                            <td colspan="6">
-                                Expressions :<br />
+                            <td colspan="9">
+                                <h7>Expressions :</h7><fieldset>
                                 <table>
                                     <tr>
                                         <th>
@@ -111,12 +112,84 @@
                                                 <a href="deleteExpression?id_expr=${exp.id}">delete</a>
                                             </td>
                                         </tr>
+                                        <c:if test="${not empty exp.manifs}">
+                                            <tr>
+                                                <td colspan="2">
+                                                   &nbsp; 
+                                                </td>
+                                                <td colspan="10">
+                                                    </br><h7>Manifestations :</h7>
+                                                    <table>
+                                                        <tr>
+                                                            <th>
+                                                                ID
+                                                            </th>
+                                                            <th>
+                                                                TITLE
+                                                            </th>
+                                                            <th>
+                                                                EDITION
+                                                            </th>
+                                                            <th>
+                                                                STATEMENT RESPONSIBILITY
+                                                            </th>
+                                                            <th>
+                                                                PUBLICATION PLACE
+                                                            </th>
+                                                            <th>
+                                                                PUBLISHER
+                                                            </th>
+                                                            <th>
+                                                                DATE
+                                                            </th>
+                                                            <th>
+                                                                MANIFESTATION ID
+                                                            </th>
+                                                            <th>
+                                                                SOURCE ACQUISITION
+                                                            </th>
+                                                            <th>
+                                                                TYPE FACE
+                                                            </th>
+                                                            <th>
+                                                                MANIFESTATION ID & TITLE
+                                                            </th>
+                                                            <th>
+                                                                ITEM ID & IDENTIFIER
+                                                            </th>
+                                                            <th>
+                                                            </th>
+                                                        </tr>
+                                                        <c:forEach items="${exp.manifs}" var="man">
+                                                            <tr>
+                                                                <td>${man.id}</td>
+                                                                <td>${man.title}</td>
+                                                                <td>${man.edition}</td>
+                                                                <td>${man.date}</td>
+                                                                <td>${man.publisher}</td>
+                                                                <td>${man.publicationPlace}</td>
+                                                                <td>${man.statementResponsibility}</td>
+                                                                <td>${man.manifestationID}</td>
+                                                                <td>${man.sourceAcquisition}</td>
+                                                                <td>${man.typeFace}</td>
+                                                                <td>${man.expr.id} ${man.expr.title}</td>
+                                                                <td>${man.itm.id} ${man.itm.identifier}</td>
+                                                            <td>
+                                                                <a href="editManifestation?id_manif=${man.id}">edit</a>&nbsp;
+                                                                <a href="deleteManifestation?id_manif=${man.id}">delete</a>
+                                                            </td>
+                                                            </tr>
+                                                        </c:forEach><hr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </c:if><hr>
                                     </c:forEach>
                                 </table>
-                            </td>
+                            </td></fieldset>
                         </tr>
-                    </c:if>
-                </c:forEach>
-            </table>    
+                    </c:if> 
+            </c:forEach>
+        </table> 
     </body>
 </html>

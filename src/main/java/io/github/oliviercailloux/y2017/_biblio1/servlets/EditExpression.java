@@ -37,6 +37,7 @@ public class EditExpression extends HttpServlet {
         // send it to the edit page of work
         Expression expr = exprF.find(idExpr);
         request.setAttribute("expr", expr);
+        
         getServletContext().getRequestDispatcher("/editExpression.jsp").forward(request, response);
     }
 
