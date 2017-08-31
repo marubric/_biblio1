@@ -81,6 +81,10 @@
         <servlet-name>SearchItem</servlet-name>
         <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchItem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchManifestation</servlet-name>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchManifestation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddWork</servlet-name>
         <url-pattern>/addWork</url-pattern>
@@ -160,6 +164,10 @@
     <servlet-mapping>
         <servlet-name>SearchItem</servlet-name>
         <url-pattern>/searchItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchManifestation</servlet-name>
+        <url-pattern>/searchManifestation</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>/index.html</welcome-file>
