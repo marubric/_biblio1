@@ -79,7 +79,7 @@
     </servlet>
     <servlet>
         <servlet-name>SearchItem</servlet-name>
-        <servlet-class>io.github.oliviercailloux.y2017.bibliomr.session.SearchItem</servlet-class>
+        <servlet-class>io.github.oliviercailloux.y2017._biblio1.servlets.SearchItem</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddWork</servlet-name>

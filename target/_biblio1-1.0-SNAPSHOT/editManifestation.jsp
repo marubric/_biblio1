@@ -57,7 +57,7 @@
                 Item:
                 <select name="id_Item">
                     <c:forEach items="${items}" var="itm">
-                        <option value="${itm.id}">${itm.id} | ${itm.provenance}</option>
+                        <option value="${itm.id}">${itm.id} | ${itm.identifier}</option>
                     </c:forEach>
                 </select>
                 </p>              

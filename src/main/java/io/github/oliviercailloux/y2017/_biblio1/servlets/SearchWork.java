@@ -1,10 +1,8 @@
 package io.github.oliviercailloux.y2017._biblio1.servlets;
 
 import io.github.oliviercailloux.y2017._biblio1.modele.*;
-import io.github.oliviercailloux.y2017._biblio1.service.*;
 import java.io.IOException;
 import java.util.List;
-import javax.ejb.EJB;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

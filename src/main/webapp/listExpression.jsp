@@ -41,7 +41,7 @@
                     <th>
                         ACTIONS
                     </th>
-                </tr>
+                </tr><fieldset>
                 <c:forEach items="${exprs}" var="expr">
                     <tr>
                         <td>${expr.id}</td>
@@ -117,7 +117,7 @@
                                                 <a href="editManifestation?id_manif=${man.id}">edit</a>&nbsp;
                                                 <a href="deleteManifestation?id_manif=${man.id}">delete</a>
                                             </td>
-                                        </tr>
+                                        </tr></fieldset>
                                     </c:forEach>
                                 </table>
                             </td>

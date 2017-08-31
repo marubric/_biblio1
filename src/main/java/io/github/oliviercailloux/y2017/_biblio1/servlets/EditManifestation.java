@@ -62,8 +62,8 @@ public class EditManifestation extends HttpServlet {
         Manifestation man;
         
         // Get all information of a manifestation
-        titleM = request.getParameter("ident");
-        edition = request.getParameter("prov");
+        titleM = request.getParameter("titleM");
+        edition = request.getParameter("edition");
         state = request.getParameter("state");
         publication = request.getParameter("publication");
         publisher = request.getParameter("publisher");
